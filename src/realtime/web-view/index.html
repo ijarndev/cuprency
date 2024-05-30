@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hehe</title>
+
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; } 
+        span{ font-size: 100px; font-weight: bold; }
+    </style>
+</head>
+
+<script type="module">
+    import io from 'https://cdn.socket.io/4.3.2/socket.io.esm.min.js'
+    const socket = io({
+        auth: {
+            token: 'xx'
+        }
+    })
+    let last_value = 0
+
+    socket.on('update', (data) => {
+        document.querySelector('#value').innerHTML = `$${data}` 
+        console.log(data)
+    })
+</script>
+
+<body>
+    <span id="value"></span>
+</body>
+</html>

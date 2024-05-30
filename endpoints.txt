@@ -1,0 +1,9 @@
+currency
+    /get/[mlc, usd, eur]
+        Returns information about the specified currency.
+
+    /convert/n/[mlc, usd, eur]
+        Returns the result of converting the specified amount of a currency to another.
+    
+    /list
+        Returns a list of all Cuprency's supported currencies.
